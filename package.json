@@ -6,13 +6,18 @@
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack serve --open --config webpack.dev.js",
+    "lint": "npx eslint ./src/",
+    "lint:fix": "npm run lint -- --fix",
     "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/js": "^9.17.0",
     "css-loader": "^7.1.2",
+    "eslint": "^9.17.0",
+    "globals": "^15.14.0",
     "html-webpack-plugin": "^5.6.0",
     "raw-loader": "^4.0.2",
     "style-loader": "^4.0.0",
