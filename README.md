@@ -48,6 +48,7 @@ Stylelint configuration following [their documentation](https://stylelint.io/). 
 
 - A vanilla configuration in `stylelint.config.mjs` (result of `npm init stylelint`, replaced `eslintrc.json`)
 - Scripts to lint and fix code over the /src/styles directory
+- If you want to lint CSS code inside `<style>` tags, check [stylelint-config-html](https://www.npmjs.com/package/stylelint-config-html) - and unset the `html` value set in cofig file `ignoreFiles` option (it is set to prevent VSCode StyleLint extension screaming)
 
 
 
