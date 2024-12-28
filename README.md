@@ -6,6 +6,8 @@ Webpack development template repository for SPA-like front-end only apps that in
 - Webpack v5 config
 - ESLint v9 config
 - StyleLint v16 config
+- Prettier v3 config
+- Workspace considerations
 
 ## Details
 
@@ -49,6 +51,16 @@ Stylelint configuration following [their documentation](https://stylelint.io/). 
 - A vanilla configuration in `stylelint.config.mjs` (result of `npm init stylelint`, replaced `eslintrc.json`)
 - Scripts to lint and fix code over the /src/styles directory
 - If you want to lint CSS code inside `<style>` tags, check [stylelint-config-html](https://www.npmjs.com/package/stylelint-config-html) - and unset the `html` value set in cofig file `ignoreFiles` option (it is set to prevent VSCode StyleLint extension screaming)
+
+### Prettier v3 Config
+
+Prettier configuration following [their documentation](https://prettier.io/docs/en/). Includes:
+
+- A minimal configuration in `prettier.config.mjs`, that adds some rules to the Prettier defaults
+- A `.prettieignore` file, to avoid formatting some project parts
+- Scripts to check and fix code over the /src directory
+
+
 
 
 
