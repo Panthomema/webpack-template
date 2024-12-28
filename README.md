@@ -60,7 +60,35 @@ Prettier configuration following [their documentation](https://prettier.io/docs/
 - A `.prettieignore` file, to avoid formatting some project parts
 - Scripts to check and fix code over the /src directory
 
+### Workspace Considerations
 
+You should be able to work with this template in any code editor, running the npm scripts it provides in the CLI. By the way, to streamline the process, i recommend using it in VSCode with this extensions:
 
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [StyleLint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
+- [Format Code Action](https://marketplace.visualstudio.com/items?itemName=rohit-gohri.format-code-action)
 
+Add this to your user settings or your projects settings (experiment with them):
 
+```
+"editor.defaultFormatter": "esbenp.prettier-vscode",
+"eslint.probe": ["javascript", "javascriptreact", "vue"],
+"editor.formatOnSave": false, // Needs to be disabled to use codeActionsOnSave
+"editor.codeActionsOnSave": [
+  // Runs Prettier, then ESLint
+  "source.formatDocument",
+  "source.organizeImports",
+  "source.fixAll.eslint"
+],
+"stylelint.validate": ["css", "html", "astro"],
+"[css]": {
+    "editor.codeActionsOnSave": [
+      // Runs Prettier, then StyleLint
+      "source.formatDocument",
+      "source.organizeImports",
+      "source.fixAll.stylelint"
+    ]
+  },
+```
