@@ -3,9 +3,15 @@ import globals from 'globals';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  { languageOptions: { globals: globals.browser } },
-  pluginJs.configs.recommended,
+  { ignores: ['dist'] },
   {
-    rules: {},
+    files: ['**/*.js'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      globals: { ...globals.browser, ...globals.node },
+    },
+    rules: {
+      ...pluginJs.configs.recommended.rules,
+    },
   },
 ];
